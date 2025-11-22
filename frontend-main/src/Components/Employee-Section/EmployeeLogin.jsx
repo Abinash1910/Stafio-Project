@@ -174,7 +174,7 @@ const EmployeeLogin = () => {
           <img src={BGShape} className="bg-shape" alt="" />
 
           <div className="login-left-content text-center">
-            <img src={teampluslogo} alt="" className="teamplus-logo mb-3" />
+            <img src={teampluslogo} alt="" className="teampluss-logo mb-3" />
             <h2 className="login-heading">One Portal,</h2>
             <h4 className="login-subheading">Unlimited Potential</h4>
             <p className="login-description">
@@ -182,7 +182,7 @@ const EmployeeLogin = () => {
             </p>
           </div>
 
-          <img src={Imagelogin} className="login-illustration" alt="" />
+          <img src={Imagelogin} className="login-illustrations" alt="" />
         </Col>
 
         {/* RIGHT SIDE */}
@@ -232,6 +232,7 @@ const EmployeeLogin = () => {
                 <Form.Check
                   type="checkbox"
                   label="Remember me"
+                  className="remember-me-checkbox"
                   checked={rememberMe}
                   onChange={(e) => setRememberMe(e.target.checked)}
                 />

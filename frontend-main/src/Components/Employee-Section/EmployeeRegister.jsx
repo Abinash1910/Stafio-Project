@@ -36,6 +36,7 @@ const EmployeeRegister = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [agree, setAgree] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -101,8 +102,7 @@ const EmployeeRegister = () => {
       });
       setStrength(0);
     } catch (err) {
-      const apiMessage =
-        err.response?.data?.message || "Registration failed.";
+      const apiMessage = err.response?.data?.message || "Registration failed.";
       setError(apiMessage);
     } finally {
       setIsSubmitting(false);
@@ -205,7 +205,7 @@ const EmployeeRegister = () => {
                 <Form.Control
                   type="text"
                   name="username"
-                  placeholder="Enter username"
+                  placeholder="Please enter your name"
                   value={formData.username}
                   onChange={handleChange}
                   required
@@ -217,7 +217,7 @@ const EmployeeRegister = () => {
                 <Form.Control
                   type="tel"
                   name="phone"
-                  placeholder="Enter your phone number"
+                  placeholder="Please enter your phone number"
                   value={formData.phone}
                   onChange={handleChange}
                   required
@@ -229,7 +229,7 @@ const EmployeeRegister = () => {
                 <Form.Control
                   type="email"
                   name="email"
-                  placeholder="Enter email"
+                  placeholder="Please enter your email"
                   value={formData.email}
                   onChange={handleChange}
                   required
@@ -284,7 +284,7 @@ const EmployeeRegister = () => {
                     <Form.Control
                       type={showConfirmPassword ? "text" : "password"}
                       name="confirmPassword"
-                      placeholder="Confirm password"
+                      placeholder="Enter confirm password"
                       value={formData.confirmPassword}
                       onChange={(e) =>
                         setFormData({
@@ -313,6 +313,36 @@ const EmployeeRegister = () => {
                   </div>
                 </InputGroup>
               </Form.Group>
+              <Form.Group className="mb-3 d-flex align-items-center">
+                <Form.Check
+                  type="checkbox"
+                  id="termsCheck"
+                  checked={agree}
+                  onChange={(e) => setAgree(e.target.checked)}
+                  required
+                  style={{
+                    width: "18px",
+                    height: "18px",
+                   
+                    cursor: "pointer",
+                    marginRight: "10px",
+                    accentColor: "#19bde8", // 🔵 Makes tick color BLUE
+                  }}
+                />
+
+                <label htmlFor="termsCheck" style={{ margin: 0 }}>
+                  I agree to all the{" "}
+                  <span style={{ color: "#19bde8", cursor: "pointer" }}>
+                    Terms
+                  </span>{" "}
+                  &{" "}
+                  <span style={{ color: "#19bde8", cursor: "pointer" }}>
+                    Conditions
+                  </span>
+                </label>
+              </Form.Group>
+
+              
 
               <Button variant="primary" type="submit" className="register-btn">
                 Sign Up

@@ -195,7 +195,7 @@ def register_user():
 
     except IntegrityError:
         db.rollback()
-        return jsonify({"message": "Username or email already exists."}), 409
+        return jsonify({"message": "Username or email or Phone number already exists. "}), 409
 
     except Exception as e:
         if db:
