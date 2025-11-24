@@ -1,7 +1,9 @@
 services:
   - type: web
-    name: backend
+    name: leave-mgmt-backend
     env: python
+    plan: free
+    rootDir: Backend-main
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app_py_for_leave_management_backend:app
     pythonVersion: 3.10.14
