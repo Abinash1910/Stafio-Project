@@ -6,4 +6,4 @@ services:
     rootDir: Backend-main
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app_py_for_leave_management_backend:app
-    pythonVersion: 3.10.14
+    pythonVersion: 3.10
