@@ -2,6 +2,7 @@ services:
   - type: web
     name: leave-mgmt-backend
     env: python
+    runtime: python3.10
     plan: free
     rootDir: Backend-main
     buildCommand: pip install -r requirements.txt
