@@ -26,7 +26,7 @@ import urllib.parse
 
 encoded_password = urllib.parse.quote(DB_CONFIG['password'])
 
-DATABASE_URL = os.getenv("DATABASE_URL")
+DATABASE_URL = f"postgresql://{DB_CONFIG['user']}:{encoded_password}@{DB_CONFIG['host']}:{DB_CONFIG['port']}/{DB_CONFIG['database']}"
 
 # Create engine
 engine = create_engine(DATABASE_URL, echo=False)

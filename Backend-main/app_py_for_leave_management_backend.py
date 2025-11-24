@@ -7,6 +7,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import date, datetime
 from functools import wraps
 import os
+import sys
 import jwt
 import requests
 import secrets
@@ -1308,6 +1309,11 @@ def get_employee_profile_data(user_id):
     finally:
         if db:
             db.close()
+
+
+@app.route('/pyver')
+def pyver():
+    return sys.version
 
 
 # Run the Flask application
