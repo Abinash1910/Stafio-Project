@@ -82,7 +82,7 @@
 
 
 /* SEARCH */
-.search-input {
+.search-inputt {
   padding: 6px 14px;
   border: 1px solid #ccc;
   border-radius: 16px;
@@ -91,7 +91,8 @@
   outline: none;
   margin-Left:-20px;
   margin-top:10px;
-  margin-left:10px;
+  margin-left:10px !important;
+  background: transparent;
 }
 
 /* RIGHT SIDE */

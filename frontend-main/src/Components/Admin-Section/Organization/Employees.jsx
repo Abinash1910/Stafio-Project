@@ -58,7 +58,7 @@ const Employee = () => {
               <input
                 type="text"
                 placeholder="🔍 Search..."
-                className="search-input"
+                className="search-inputt"
               />
             </div>
 
